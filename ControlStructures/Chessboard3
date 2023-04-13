@@ -10,6 +10,8 @@ public class Chessboard3 {
         System.out.print("Enter the Column Coordinates: ");
         char column = sc.next().charAt(0);
 
+        sc.close();
+
         int ascii = (int) column;
 
         int sum = row + ascii;

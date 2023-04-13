@@ -10,10 +10,13 @@ public class Chessboard2 {
         System.out.print("Enter the Column Coordinates: ");
         char column = sc.next().charAt(0);
 
+        sc.close();
+
         int ascii = (int) column;
 
         int modRow = row % 2;
         int modColumn = ascii % 2;
+
 
     switch (modRow) {
         case 0:
@@ -26,7 +29,6 @@ public class Chessboard2 {
                     break;
             }
             break;
-            
         case 1:
             switch (modColumn) {
                 case 0:

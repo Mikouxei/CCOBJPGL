@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Chessboard2 {
+
+    public static void main (String[] args) {
+        Scanner sc = new Scanner (System.in);
+
+        System.out.print("Enter the Row Coordinates: ");
+        int row = sc.nextInt();
+        System.out.print("Enter the Column Coordinates: ");
+        char column = sc.next().charAt(0);
+
+        int ascii = (int) column;
+
+        int modRow = row % 2;
+        int modColumn = ascii % 2;
+
+    switch (modRow) {
+        case 0:
+            switch (modColumn) {
+                case 0:
+                    System.out.println(row + "" + column + " is BLACK block");
+                    break;
+                case 1:
+                    System.out.println(row + "" + column + " is WHITE block");
+                    break;
+            }
+            break;
+            
+        case 1:
+            switch (modColumn) {
+                case 0:
+                    System.out.println(row + "" + column + " is WHITE block");
+                    break;
+                case 1:
+                    System.out.println(row + "" + column + " is BLACK block");
+                    break;
+            }
+            break;
+            
+        default:
+         System.out.println("Invalid.");
+        }
+    }
+}

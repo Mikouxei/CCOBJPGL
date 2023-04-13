@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Chessboard3 {
+
+    public static void main (String[] args) {
+        Scanner sc = new Scanner (System.in);
+
+        System.out.print("Enter the Row Coordinates: ");
+        int row = sc.nextInt();
+        System.out.print("Enter the Column Coordinates: ");
+        char column = sc.next().charAt(0);
+
+        int ascii = (int) column;
+
+        int sum = row + ascii;
+        int blockColor = sum % 2;
+
+        switch(blockColor) {
+            case 0 -> System.out.println(row + "" + column + " is a BLACK block");
+            case 1 -> System.out.println(row + "" + column + " is a WHITE block");
+        }
+    }
+}

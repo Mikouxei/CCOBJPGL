@@ -1,0 +1,285 @@
+import java.util.Scanner;
+public class Method {
+
+    static void Selection() {
+        Scanner sc = new Scanner (System.in);
+        
+        System.out.println("Assigned figures in each letter:\n" + "\n" + "A = SQUARE\n" + "B = LEFT HALF TRIANGLE\n" + "C = INVERTED LEFT HALF TRIANGLE\n" + "D = LEFT HOLLOW HALF TRIANGLE\n" + "E = INVERTED LEFT HOLLOW HALF TRIANGLE\n" + "F = RIGHT HALF TRIANGLE\n" + "G = INVERTED RIGHT HALF TRIANGLE\n" + "H = RIGHT HOLLOW HALF TRIANGLE\n" + "I = INVERTED RIGHT HOLLOW HALF TRIANGLE\n" + "J = FULL TRIANGLE\n" + "K = INVERTED FULL TRIANGLE\n" + "L = FULL HOLLOW TRIANGLE\n" + "M = INVERTED FULL HOLLOW TRIANGLE\n" + "N = HALF LEFT DIAMOND\n" + "O = HALF RIGHT DIAMOND\n");
+        
+        System.out.print("Enter the selected letter of figure: ");
+        String selected = sc.nextLine();
+        
+        System.out.print("Enter the size of figure: ");
+        int size = sc.nextInt();
+
+        sc.close();
+
+        if (selected.equalsIgnoreCase("a")) {
+            System.out.println(Square(size));
+        }
+        else if (selected.equalsIgnoreCase("b")) {
+            System.out.println(leftHalfTriangle(size));
+        }
+        else if (selected.equalsIgnoreCase("c")) {
+            System.out.println(invertedLeftHalfTriangle(size));
+        }
+        else if (selected.equalsIgnoreCase("d")) {
+            System.out.println(leftHollowHalfTriangle(size));
+        }
+        else if (selected.equalsIgnoreCase("e")) {
+            System.out.println(invertedLeftHollowHalfTriangle(size));
+        }
+        else if (selected.equalsIgnoreCase("f")) {
+            System.out.println(rightHalfTriangle(size));
+        }
+        else if (selected.equalsIgnoreCase("g")) {
+            System.out.println(invertedRightHalfTriangle(size));
+        }
+        else if (selected.equalsIgnoreCase("h")) {
+            System.out.println(rightHollowHalfTriangle(size));
+        }
+        else if (selected.equalsIgnoreCase("i")) {
+            System.out.println(invertedRightHollowHalfTriangle(size));
+        }
+        else if (selected.equalsIgnoreCase("j")) {
+            System.out.println(fullTriangle(size));
+        }
+        else if (selected.equalsIgnoreCase("k")) {
+            System.out.println(invertedFullTriangle(size));
+        }
+        else if (selected.equalsIgnoreCase("l")) {
+            System.out.println(fullHollowTriangle(size));
+        }
+        else if (selected.equalsIgnoreCase("m")) {
+            System.out.println(invertedFullHollowTriangle(size));
+        }
+        else if (selected.equalsIgnoreCase("n")) {
+            System.out.println(halfLeftDiamond(size));
+        }
+        else if (selected.equalsIgnoreCase("o")) {
+            System.out.println(halfRightDiamond(size));
+        }
+    }
+
+        static String figure = "";
+
+        static String Square (int size) {
+            for(int r = 1; r <= size; r++){
+                for(int c = 1; c <= size; ++c){
+                    figure += "* ";
+                }
+                figure += "\n";
+            }
+            return figure;
+        }
+        
+        static String leftHalfTriangle (int size) {
+            for(int r = 1; r <= size; r++){
+                for(int c = 1; c <= r; ++c){
+                    figure += "* ";
+                }
+                figure += "\n";
+            }
+            return figure;
+        }
+
+        static String invertedLeftHalfTriangle (int size) {
+            for(int r = size; r >= 1; r--){
+                for(int c = 1; c <= r; ++c){
+                    figure += "* ";
+                }
+                figure += "\n";
+            }
+            return figure;
+        }
+
+        static String leftHollowHalfTriangle (int size) {
+            for(int r = 1; r <= size; r++){
+                for(int c = 1; c <= r; ++c){
+                    if(c == 1 || r == size || c == r){
+                        figure += "* ";
+                    } else {
+                        figure += "  ";
+                    }
+                }
+                figure += "\n";
+            }
+            return figure;
+        }
+
+        static String invertedLeftHollowHalfTriangle (int size) {
+            for(int r = size; r >= 1; r--){
+                for(int c = 1; c <= r; ++c){
+                    if(c == 1 || r == size || c == r){
+                        figure += "* ";
+                    } else {
+                        figure += "  ";
+                    }
+                }
+                figure += "\n";
+            }
+            return figure;
+        }
+        
+        static String rightHalfTriangle (int size) {
+            for(int r = 1; r <= size; r++){
+                for(int s = size; s >= r; s-=1){
+                    figure += "  ";
+                }
+                for(int o = 1; o <= r; ++o){
+                    figure += "* ";
+                }
+                figure += "\n";
+            }
+            return figure;
+        }
+
+        static String invertedRightHalfTriangle (int size) {
+            for(int r = size; r >= 1; r--){
+                for(int s = size; s >= r; s-=1){
+                    figure += "  ";
+                }
+                for(int o = 1; o <= r; ++o){
+                    figure += "* ";
+                }
+                figure += "\n";
+            }
+            return figure;
+        }
+
+        static String rightHollowHalfTriangle (int size) {
+            for(int r = 1; r <= size; r++){
+                for(int s = size; s >= r; s-=1){
+                    figure += "  ";
+                }
+                for(int o = 1; o <= r; ++o){
+                    if(o == 1 || r == size || o == r){
+                        figure += "* ";
+                    } else {
+                        figure += "  ";
+                    }
+                }
+                figure += "\n";
+            }
+            return figure;
+        }
+
+        static String invertedRightHollowHalfTriangle (int size) {
+            for(int r = size; r>=1; r--){
+                for(int s = size; s >= r; s-=1){
+                    figure += "  ";
+                }
+                for(int o = 1; o <= r; ++o){
+                    if(o == 1 || r == size || o==r){
+                        figure += "* ";
+                    } else {
+                        figure += "  ";
+                    }
+                }
+                figure += "\n";
+            }
+            return figure;
+        }
+
+        static String fullTriangle (int size) {
+            for(int r = 1; r <= size; r++){
+                for(int s = size; s >= r; s-=1){
+                    figure += "  ";
+                }
+                for(int o=1; o<=r*2-1; ++o){
+                    figure += "* ";
+                }
+                figure += "\n";
+            }
+            return figure;
+        }
+
+        static String invertedFullTriangle (int size) {
+            for(int r = size; r >= 1; r--){
+                for(int s = size; s >= r; s-=1){
+                    figure += "  ";
+                }
+                for(int o=1; o<=r*2-1; ++o){
+                    figure += "* ";
+                }
+                figure += "\n";
+            }
+            return figure;
+        }
+
+        static String fullHollowTriangle (int size) {
+            for(int r = 1; r <= size; r++){
+                for(int s = size; s >= r; s-=1){
+                    figure += "  ";
+                }
+                for(int o=1; o<=r*2-1; ++o){
+                    if(o == 1 || r == size || o == r*2-1){
+                        figure += "* ";
+                    } else {
+                        figure += "  ";
+                    }
+                }
+                figure += "\n";
+            }
+            return figure;
+        }
+
+        static String invertedFullHollowTriangle (int size) {
+            for(int r = size; r >= 1; r--){
+                for(int s = size; s >= r; s-=1){
+                    figure += "  ";
+                }
+                for(int o = 1; o <= r*2-1; ++o){
+                    if(o == 1 || r == size || o == r*2-1){
+                        figure += "* ";
+                    } else {
+                        figure += "  ";
+                    }
+                }
+                figure += "\n";
+            }
+            return figure;
+        }
+
+        static String halfLeftDiamond (int size) {
+            for(int r = 1; r <= size/2; r++){
+                for(int o = 1; o <= r; ++o){
+                    figure += "* ";
+                }
+                figure += "\n";
+            }
+            for(int r = size/2+1; r>=1; r--){
+                for(int o=1; o<=r; ++o){
+                    figure += "* ";
+                }
+                figure += "\n";
+            }
+            return figure; 
+        }
+
+        static String halfRightDiamond (int size) {
+            for(int r = 1; r <= size/2; r++){
+                for(int s = size/2; s >= r; s-=1){
+                    figure += "  ";
+                }
+                for(int o = 1; o <= r; ++o){
+                    figure += "* ";
+                }
+                figure += "\n";
+            }
+            for(int r = size/2+1; r >= 1; r--){
+                for(int s = size/2; s >= r; s-=1){
+                    figure += "  ";
+                }
+                for(int o = 1; o <= r; ++o){
+                    figure += "* ";
+                }
+                figure += "\n";
+            }
+            return figure;
+        }
+        
+    public static void main(String[] args) {
+        Selection();
+    }
+}

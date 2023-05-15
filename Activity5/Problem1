@@ -1,0 +1,26 @@
+import ClassPack.Problem1.*;
+import java.util.Scanner ;
+
+public class Problem1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter length: ");
+        double length = sc.nextDouble();
+
+        System.out.print("Enter width: ");
+        double width = sc.nextDouble();
+
+        System.out.print("Enter height: ");
+        double height = sc.nextDouble();
+
+        Box box = new Box(length, width, height);
+
+        System.out.println("Area: " + box.getArea());
+        System.out.println("Volume: " + box.getVolume());
+
+        sc.close();
+    }
+}
+
+

@@ -1,0 +1,14 @@
+package ClassPack.ClassInheritance;
+
+public class Animal {
+    String name;
+    int age;
+
+    public void hungry(){
+        System.out.println("is hungry");
+    }
+
+    public void play(){
+        System.out.println(" is playing with you");
+    }
+}
